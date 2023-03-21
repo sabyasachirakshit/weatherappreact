@@ -40,6 +40,7 @@ function App() {
           <option value="Pakistan">Pakistan</option>
           <option value="China">China</option>
           <option value="Japan">Japan</option>
+  <option value="Phillipines">Phillipines</option>
           <option value="USA">United States of America</option>
           <option value="Afghanistan">Afghanistan</option>
           <option value="Sri Lanka">Sri Lanka</option>

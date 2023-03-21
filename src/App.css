@@ -11,3 +11,8 @@
 .result-screen {
   text-align: center;
 }
+
+.temperature-results {
+  display: flex;
+  gap: 20px;
+}

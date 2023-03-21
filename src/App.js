@@ -101,7 +101,11 @@ function App() {
           <h2>Location: {weatherData.location.name}</h2>
           <h2>Weather Condition: {weatherCondition}</h2>
           <img src={`https://${weatherIcon}`} alt="Weather icon"></img>
-          <h2>Temperature: {weatherData.current.temp_c}°C</h2>
+          <div className="temperature-results">
+            <h2>Temperature °C: {weatherData.current.temp_c}°C</h2>
+            <h2>Temperature °F: {weatherData.current.temp_f}°F</h2>
+          </div>
+
           <h2>Humidity: {weatherData.current.humidity}%</h2>
         </div>
       )}

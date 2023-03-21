@@ -1,4 +1,18 @@
-.App {
+.main-screen {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  background-color: #282c34;
+  min-height: 100vh;
+  color: white;
+}
+
+.result-screen {
+  text-align: center;
+}
+
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +49,4 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */

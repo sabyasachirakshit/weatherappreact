@@ -29,11 +29,7 @@ function App() {
   };
 
   return (
-    <div
-      className={`main-screen ${
-        weatherCondition && weatherCondition.toLowerCase()
-      }`}
-    >
+    <div className="main-screen">
       <h2>SR Weather App</h2>
       <div>
         <label htmlFor="location-select">
@@ -103,6 +99,7 @@ function App() {
       {weatherData && (
         <div className="result-screen">
           <h2>Location: {weatherData.location.name}</h2>
+          <h2>Weather Condition: {weatherCondition}</h2>
           <img src={`https://${weatherIcon}`} alt="Weather icon"></img>
           <h2>Temperature: {weatherData.current.temp_c}°C</h2>
           <h2>Humidity: {weatherData.current.humidity}%</h2>

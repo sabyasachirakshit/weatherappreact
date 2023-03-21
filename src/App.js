@@ -5,6 +5,8 @@ import "./App.css";
 
 function App() {
   const [weatherData, setWeatherData] = useState(null);
+  const [weatherCondition, setWeatherCondition] = useState(null);
+  const [weatherIcon, setWeatherIcon] = useState(null);
   const [location, setLocation] = useState("India");
 
   useEffect(() => {
@@ -14,6 +16,8 @@ function App() {
       )
       .then((response) => {
         setWeatherData(response.data);
+        setWeatherCondition(response.data.current.condition.text);
+        setWeatherIcon(response.data.current.condition.icon);
       })
       .catch((error) => {
         console.error(error);
@@ -25,7 +29,11 @@ function App() {
   };
 
   return (
-    <div className="main-screen">
+    <div
+      className={`main-screen ${
+        weatherCondition && weatherCondition.toLowerCase()
+      }`}
+    >
       <h2>SR Weather App</h2>
       <div>
         <label htmlFor="location-select">
@@ -95,6 +103,7 @@ function App() {
       {weatherData && (
         <div className="result-screen">
           <h2>Location: {weatherData.location.name}</h2>
+          <img src={`https://${weatherIcon}`} alt="Weather icon"></img>
           <h2>Temperature: {weatherData.current.temp_c}°C</h2>
           <h2>Humidity: {weatherData.current.humidity}%</h2>
         </div>
